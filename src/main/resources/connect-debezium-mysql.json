@@ -1,0 +1,26 @@
+{
+  "name": "${debezium.connector.name}",
+  "config": {
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "${debezium.tasks.max}",
+    "database.hostname": "${debezium.database.hostname}",
+    "database.port": "${debezium.database.port}",
+    "database.user": "${debezium.database.user}",
+    "database.password": "${debezium.database.password}",
+    "database.server.id": "184054",
+    "database.server.name": "${debezium.database.server.name}",
+    "database.include.list": "${debezium.database.include.list}",
+    "table.include.list": "${debezium.table.include.list}",
+    "database.history.kafka.bootstrap.servers": "${spring.kafka.bootstrap-servers}",
+    "database.history.kafka.topic": "${debezium.database.history.kafka.topic}",
+    "include.schema.changes": "${debezium.include.schema.changes}",
+    "decimal.handling.mode": "${debezium.decimal.handling.mode}",
+	"topic.prefix":"${topic.prefix}",
+	"schema.history.internal.kafka.topic": "schema-changes.cdc",
+    "schema.history.internal.kafka.bootstrap.servers": "${spring.kafka.bootstrap-servers}",
+	"value.converter": "org.apache.kafka.connect.json.JsonConverter",
+	"value.converter.schemas.enable": "false",
+	"key.converter": "org.apache.kafka.connect.json.JsonConverter",
+	"key.converter.schemas.enable": "false"
+  }
+}
